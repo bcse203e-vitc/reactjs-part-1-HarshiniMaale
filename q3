@@ -1,0 +1,37 @@
+Contents of greeting.js
+import React from "react";
+
+const Greeting = () => {
+  const name = "Harshini";
+
+  // Get the current hour
+  const currentHour = new Date().getHours();
+  let greeting;
+
+  // Determine the greeting based on the time
+  if (currentHour < 12) {
+    greeting = "Good Morning";
+  } else if (currentHour < 18) {
+    greeting = "Good Afternoon";
+  } else {
+    greeting = "Good Evening";
+  }
+
+  return <h1>{greeting}, {name}!</h1>;
+};
+
+export default Greeting;
+
+Contents of app.js
+import React from "react";
+import Greeting from "./Greeting"; // Import Greeting component
+
+function App() {
+  return (
+    <div>
+      <Greeting />
+    </div>
+  );
+}
+
+export default App;
